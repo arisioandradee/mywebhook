@@ -24,8 +24,7 @@ app.post('/webhook-zapi', async (req, res) => {
         // Salva apenas se for mensagem RECEBIDA (fromMe: false)
         if (payload.fromMe === false && payload.text?.message) {
             const { error } = await supabase
-                .schema('whatsapp_disparo')
-                .from('respostas')
+                .from('wa_disparo_respostas')
                 .insert({
                     instance_id: payload.instanceId,
                     phone: payload.phone.replace(/\D/g, ''),
