@@ -24,6 +24,7 @@ app.post('/webhook-zapi', async (req, res) => {
         // Salva apenas se for mensagem RECEBIDA (fromMe: false)
         if (payload.fromMe === false && payload.text?.message) {
             const { error } = await supabase
+                .schema('whatsapp_disparo')
                 .from('respostas')
                 .insert({
                     instance_id: payload.instanceId,
@@ -31,8 +32,7 @@ app.post('/webhook-zapi', async (req, res) => {
                     message_id: payload.messageId,
                     text_content: payload.text.message,
                     raw_payload: payload
-                })
-                .schema('whatsapp_disparo');
+                });
 
             if (error) {
                 console.error('Erro no Supabase:', error.message);
