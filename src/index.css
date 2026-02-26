@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #ffffff;
+  background-color: #020617;
+
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --accent: #10b981;
+  --bg-dark: #020617;
+  --bg-card: #0b0f1a;
+  --border: rgba(255, 255, 255, 0.05);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #020617;
+}
+
+#root {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Branding Titles */
+.main-title {
+  font-size: clamp(3rem, 8vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+  color: white;
+  letter-spacing: -0.04em;
+}
+
+.accent-title {
+  background: linear-gradient(to right, #4f46e5, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Search Bar - Central Style */
+.search-container {
+  background: #0b0f1a;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  transition: all 0.3s ease;
+}
+
+.search-container:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-input::placeholder {
+  color: #4b5563;
+}
+
+/* Action Cards Pattern (Sem os cards mas com a estética) */
+.content-box {
+  background: #0b0f1a;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+/* Buttons like "Acessar" */
+.btn-acessar {
+  background: #4f46e5;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-acessar:hover:not(:disabled) {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+.btn-acessar:disabled {
+  background: #1e293b;
+  color: #475569;
+  cursor: not-allowed;
+}
+
+/* Upload Zone Refined */
+.upload-wrapper {
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.upload-wrapper:hover {
+  background: rgba(79, 70, 229, 0.05);
+  border-color: var(--primary);
+}
+
+/* Custom Table */
+.dibai-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dibai-table th {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #64748b;
+  border-bottom: 1px solid var(--border);
+  font-weight: 700;
+}
+
+.dibai-table td {
+  padding: 1.25rem 1.5rem;
+  color: #94a3b8;
+  border-bottom: 1px solid var(--border);
+}
+
+.dibai-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+  color: white;
+}
+
+/* Checkbox Style */
+.cb-custom {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.4rem;
+  border: 2px solid #334155;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.cb-custom:checked {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.cb-custom:checked::after {
+  content: "L";
+  transform: scaleX(-1) rotate(-35deg);
+  position: absolute;
+  left: 0.35rem;
+  top: 0.1rem;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+/* Animations */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
