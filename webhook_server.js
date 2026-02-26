@@ -19,10 +19,10 @@ app.post('/webhook-zapi', async (req, res) => {
         const payload = req.body;
         console.log('--- Novo Webhook Z-API ---');
         console.log('Telefone:', payload.phone);
-        // Extrai o conteúdo da mensagem (texto normal ou resposta de botão)
-        const textContent = payload.text?.message || payload.buttonResponse?.selectedButtonId || payload.buttonResponse?.buttonText;
+        // Extrai o conteúdo da mensagem
+        const textContent = payload.text?.message;
 
-        // Salva apenas se for mensagem RECEBIDA (fromMe: false) e tiver algum conteúdo
+        // Salva apenas se for mensagem RECEBIDA (fromMe: false) e tiver texto
         if (payload.fromMe === false && textContent) {
             const { error } = await supabase
                 .from('wa_disparo_respostas')
