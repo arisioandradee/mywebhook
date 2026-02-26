@@ -1,27 +1,13 @@
 {
-  "name": "disparo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@supabase/supabase-js": "^2.98.0",
-    "lucide-react": "^0.575.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "xlsx": "^0.18.5"
-  },
-  "devDependencies": {
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.4",
-    "vite": "^7.3.1"
-  }
+    "name": "zapi-webhook-supabase",
+    "version": "1.0.0",
+    "description": "Webhook receiver for Z-API and Supabase",
+    "main": "webhook_server.js",
+    "scripts": {
+        "start": "node webhook_server.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2",
+        "@supabase/supabase-js": "^2.38.4"
+    }
 }
